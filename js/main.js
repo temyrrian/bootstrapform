@@ -1,11 +1,9 @@
-
-$('document').ready(function(){ 
+$('document').ready(function(){
 
 $('#name_input, #slogan, #location' ).change( 
-function(element)
-    {
-        console.log('start');
- var target_wrapper = element.target.parentNode;  
+function(element){
+ var target_wrapper = element.target.parentNode;
+
  if (element.target.value){
      if(!target_wrapper.classList.contains('has-success')){
             target_wrapper.classList.add('has-success' );
@@ -23,24 +21,24 @@ function(element)
 
 $('#form').submit(function(e){ 
     e.preventDefault();
-            var data = $(this).serialize();
-            console.log(data);
-
-    $.ajax({
-                    url: 'test.php',
-                    type: 'post',
-                    data: $(this).serialize(),
+        $.ajax({
+               url: 'tefst.php',
+               type: 'post',
+               data: $(this).serialize(),
 
                     beforeSend: function(xhr, textStatus){ 
-                       //  $('#form ').attr('disabled','disabled');
+                         $('#submit_button').attr('disabled','disabled');
                     },
                     success: function(data, textStatus, jqXHR){
-                             console.log("We did it", data, textStatus, jqXHR);
-                                    },
+                        $('.success_handler').css('display','block');
+                       },
                     error: function (jqXHR, textStatus, errorThrown){
                              console.log('Fail', jqXHR, textStatus, errorThrown)
-                                    }
-            }); // end ajax({...})
-	});
+                        $('.alert_handler').css('display','block');
+                        $('#submit_button').removeAttr('disabled');
+                       }
+            });
+	    });
+
 
 });

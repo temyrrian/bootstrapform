@@ -1,18 +1,28 @@
-body{
 
-
-}
 .form_wrap{
 min-width: 300px; 
 max-width: 600px;
-
 padding-left: 5%;
 padding-right: 5%;
-
-    
 }
 
 .inner_container{
     overflow-x: hidden;
+}
 
+.success_handler{
+   display: none;
+   position: fixed;
+   top: 0%;
+   right: 0;
+}
+
+.alert_handler{
+    display: none;
+    position: fixed;
+    background-color: #f08c80;
+    border: 1px solid #8a3029;
+    color: #424243;
+    top: 0%;
+    right: 0;
 }
