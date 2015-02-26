@@ -22,7 +22,7 @@ function(element){
 $('#form').submit(function(e){ 
     e.preventDefault();
         $.ajax({
-               url: 'tefst.php',
+               url: 'test.php',
                type: 'post',
                data: $(this).serialize(),
 
